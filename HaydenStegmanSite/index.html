@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="/src/images/rel_icon.png" type="image/png" />
+    <!-- Adobe Fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/rye3jaa.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/029bb9f7f8.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Hayden Stegman</title>
+  </head>
+  <body>
+    <!-- Three.JS Canvas -->
+    <canvas id="bg"></canvas>
+    <main id="mainSection">
+      <!-- Navigation -->
+      <nav>
+        <a class="aLeft" href="#">Local Pic Plug</a>
+        <a class="aRight" href="#">About</a>
+        <a class="aRight" href="#">Projects</a>
+        <a class="aRight" href="#">Contact</a>
+      </nav>
+
+      <div class="bottom">
+        <!-- Ski Environment -->
+        <img src="/src/images/SnowyMountains.png" class="backgroundL2" />
+        <img src="/src/images/VectorArt/SnowyField.png" class="backgroundL1" />
+        <img src="/src/images/TreesLeft.png" class="leftImg" />
+        <img src="/src/images/TreesRight.png" class="rightImg" />
+        <img
+          src="/src/images/VectorArt/VectorJumpImage.png"
+          class="centerImg"
+        />
+      </div>
+
+      <div class="center">
+        <div class="floatingButton" onclick="toggleDefs()">
+          <p class="floatingText">Toggle Definitions</p>
+          <p class="notSold">Not sure if these are neccicary.</p>
+        </div>
+        <!-- Center Page -->
+        <div class="introDiv">
+          <div class="alternator" onclick="prevDescWord()">
+            <i class="fa-solid fa-chevron-left fa-3x leftAlternatorArrow"></i>
+          </div>
+          <div>
+            <h3>My name is Hayden & I'm a -</h3>
+            <div class="changingTextBox">
+              <div class="blinkerContainer"></div>
+              <h1 class="cycle" id="typewriter"></h1>
+              <div class="blinkerContainer">
+                <div class="textBlinker" id="blinker"></div>
+              </div>
+              <script src="src/javascript/typewriter.js"></script>
+            </div>
+            <div>
+              <p class="definitions" id="def"></p>
+            </div>
+          </div>
+          <div class="alternator" onclick="nextDescWord()">
+            <i class="fa-solid fa-chevron-right fa-3x rightAlternatorArrow"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="jumpInCircle" onclick="nextPage()">
+        <p class="jumpInText">Jump In</p>
+      </div>
+    </main>
+
+    <!-- Skier Animation -->
+    <canvas id="jumpManCanvas"></canvas>
+    <script src="src/javascript/jumpMap.js"></script>
+
+    <div class="below">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porttitor
+        ligula vitae placerat pharetra. Pellentesque laoreet egestas ipsum ac
+        molestie. Nullam vitae rhoncus turpis. Maecenas aliquam tincidunt arcu.
+        Vestibulum efficitur eget odio at posuere. Sed turpis risus, convallis
+        ut egestas eu, ornare nec augue. Morbi sodales, sapien a mollis mattis,
+        augue magna scelerisque diam, sed pharetra diam ex ut ligula. Ut congue
+        sodales neque, vitae cursus lorem scelerisque ac.
+      </p>
+    </div>
+    <!-- Three.JS Script -->
+    <script type="module" src="/src/javascript/particleOverlay.js"></script>
+
+    <!-- Cursor -->
+    <div class="cursorDot"></div>
+    <div class="cursorFollow"></div>
+    <script src="/src/javascript/cursor.js"></script>
+  </body>
+</html>
