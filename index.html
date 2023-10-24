@@ -14,80 +14,43 @@
 
     <title>Hayden Stegman</title>
   </head>
+  <!--
+          Spacer
+  -->
   <body>
     <!-- Three.JS Canvas -->
     <canvas id="bg"></canvas>
-    <main id="mainSection">
-      <!-- Navigation -->
-      <nav>
-        <a class="aLeft" href="#">Local Pic Plug</a>
-        <a class="aRight" href="#">About</a>
-        <a class="aRight" href="#">Projects</a>
-        <a class="aRight" href="#">Contact</a>
-      </nav>
 
-      <div class="bottom">
-        <!-- Ski Environment -->
-        <img src="/src/images/SnowyMountains.png" class="backgroundL2" />
-        <img src="/src/images/VectorArt/SnowyField.png" class="backgroundL1" />
-        <img src="/src/images/TreesLeft.png" class="leftImg" />
-        <img src="/src/images/TreesRight.png" class="rightImg" />
-        <img
-          src="/src/images/VectorArt/VectorJumpImage.png"
-          class="centerImg"
-        />
-      </div>
+    <!-- Navigation -->
+    <nav>
+      <a href="#">HS</a>
+      <a href="#">ABOUT ME</a>
+      <a href="#">PROJECTS</a>
+      <a href="#">CONTACT</a>
+    </nav>
 
-      <div class="center">
-        <div class="floatingButton" onclick="toggleDefs()">
-          <p class="floatingText">Toggle Definitions</p>
-          <p class="notSold">Not sure if these are neccicary.</p>
+    <!-- My Name Header-->
+    <h1 class="nameHeader">HAYDEN STEGMAN</h1>
+
+    <!-- Center Controller-->
+    <div class="introDiv">
+      <h3 class="controllerHeader">Checkout My</h3>
+      <div class="changingTextBox">
+        <div class="alternator" onclick="prevDescWord()">
+          <i class="fa-solid fa-chevron-left fa-3x leftAlternatorArrow"></i>
         </div>
-        <!-- Center Page -->
-        <div class="introDiv">
-          <div class="alternator" onclick="prevDescWord()">
-            <i class="fa-solid fa-chevron-left fa-3x leftAlternatorArrow"></i>
-          </div>
-          <div>
-            <h3>My name is Hayden & I'm a -</h3>
-            <div class="changingTextBox">
-              <div class="blinkerContainer"></div>
-              <h1 class="cycle" id="typewriter"></h1>
-              <div class="blinkerContainer">
-                <div class="textBlinker" id="blinker"></div>
-              </div>
-              <script src="src/javascript/typewriter.js"></script>
-            </div>
-            <div>
-              <p class="definitions" id="def"></p>
-            </div>
-          </div>
-          <div class="alternator" onclick="nextDescWord()">
-            <i class="fa-solid fa-chevron-right fa-3x rightAlternatorArrow"></i>
-          </div>
+        <h1 class="cycle" id="typewriter"></h1>
+        <div class="blinkerContainer">
+          <div class="textBlinker" id="blinker"></div>
         </div>
+        <div class="alternator" onclick="nextDescWord()">
+          <i class="fa-solid fa-chevron-right fa-3x rightAlternatorArrow"></i>
+        </div>
+        <script src="src/javascript/typewriter.js"></script>
       </div>
-
-      <div class="jumpInCircle" onclick="nextPage()">
-        <p class="jumpInText">Jump In</p>
-      </div>
-    </main>
-
-    <!-- Skier Animation -->
-    <canvas id="jumpManCanvas"></canvas>
-    <script src="src/javascript/jumpMap.js"></script>
-
-    <div class="below">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porttitor
-        ligula vitae placerat pharetra. Pellentesque laoreet egestas ipsum ac
-        molestie. Nullam vitae rhoncus turpis. Maecenas aliquam tincidunt arcu.
-        Vestibulum efficitur eget odio at posuere. Sed turpis risus, convallis
-        ut egestas eu, ornare nec augue. Morbi sodales, sapien a mollis mattis,
-        augue magna scelerisque diam, sed pharetra diam ex ut ligula. Ut congue
-        sodales neque, vitae cursus lorem scelerisque ac.
-      </p>
+      <h3 class="controllerHeader">...</h3>
     </div>
+
     <!-- Three.JS Script -->
     <script type="module" src="/src/javascript/particleOverlay.js"></script>
 

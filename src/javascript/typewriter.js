@@ -1,24 +1,6 @@
 var useDefs = false;
 
-const descriptionArr = [
-  "Developer",
-  "Skier",
-  "Skater",
-  "Designer",
-  "Musician",
-  "Photographer",
-  "Freelancer",
-];
-
-const descriptionDefArr = [
-  "Noun - a person or thing that develops something.",
-  "Noun - a person who skis.",
-  "Noun - a person who skates. Maybe Definitions weren't necessary...",
-  "Noun - a person who plans the form, look, or workings of something before its being made or built, typically by drawing it in detail.",
-  "Noun - a person who plays a musical instrument, especially as a profession... Im definetly not a professional.",
-  "Noun - a person who takes photographs",
-  "Noun - working for different companies at different times rather than being permanently employed by one company",
-];
+const descriptionArr = ["Photography", "Design_Work", "Game_Project"];
 
 var currentWord = "";
 var desWordIndex = 0;
@@ -38,10 +20,6 @@ function typeOut() {
     setTimeout(typeOut, speed);
   } else {
     isTyping = false;
-    if (useDefs) {
-      setDef();
-      showDef();
-    }
   }
 }
 
@@ -70,7 +48,6 @@ function nextDescWord() {
     }
     // Delete the Current Word
     index = currentWord.length - 1;
-    if (useDefs) hideDef();
     typeIn();
   }
 }
@@ -85,43 +62,7 @@ function prevDescWord() {
     }
     // Delete the Current Word
     index = currentWord.length - 1;
-    if (useDefs) hideDef();
     typeIn();
-  }
-}
-
-function hideDef() {
-  document
-    .getElementById("def")
-    .setAttribute(
-      "style",
-      "font-size:0;transition-duration: 1s;transition-timing-function: ease-in;"
-    );
-}
-
-function setDef() {
-  document.getElementById("def").innerHTML = descriptionDefArr[desWordIndex];
-}
-
-function showDef() {
-  document
-    .getElementById("def")
-    .setAttribute(
-      "style",
-      "font-size:1em;transition-duration: 1s;transition-timing-function: ease-in;"
-    );
-}
-
-function toggleDefs() {
-  if (useDefs) {
-    hideDef();
-    useDefs = false;
-    console.log(useDefs);
-  } else {
-    setDef();
-    showDef();
-    useDefs = true;
-    console.log(useDefs);
   }
 }
 

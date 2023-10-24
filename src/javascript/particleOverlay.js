@@ -14,19 +14,22 @@ const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector("#bg"),
 });
 
-renderer.setClearColor(0x161a1d, 1);
+renderer.setClearColor(0xe5383b, 0);
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(60);
+
+camera.position.setZ(55);
+camera.position.setX(0);
+camera.position.setY(0);
 
 renderer.render(scene, camera);
 
 const particleGeometry = new THREE.BufferGeometry();
-const particlesCnt = 5000;
+const particlesCnt = 900000;
 
 const posArray = new Float32Array(particlesCnt * 3);
 for (let i = 0; i < particlesCnt * 3; i++) {
-  posArray[i] = (Math.random() * 5 - 2.5) * 3;
+  posArray[i] = Math.random() * 2 - 1;
 }
 
 particleGeometry.setAttribute(
@@ -35,7 +38,7 @@ particleGeometry.setAttribute(
 );
 const material = new THREE.PointsMaterial({
   size: 0.5,
-  color: "#B1A7A6",
+  color: "#1e2327",
 });
 
 const particlesMesh = new THREE.Points(particleGeometry, material);
@@ -51,20 +54,22 @@ document.addEventListener("mousemove", (e) => {
 
 const clock = new THREE.Clock();
 
-let snowFallSpeed = 0.03;
+let snowFallSpeed = 0.001;
+let rotateSpeed = 0.0002;
 let paralaxSpeed = 0.00001;
 
 function animate() {
   const elapsedTime = clock.getElapsedTime();
 
-  particlesMesh.position.y =
-    mouseY * paralaxSpeed - elapsedTime * snowFallSpeed;
-  particlesMesh.position.x = mouseX * -paralaxSpeed;
+  // particlesMesh.position.y = mouseY * paralaxSpeed;
+  // particlesMesh.position.x = mouseX;
 
-  if (particlesMesh.position.y < -6) {
-    particlesMesh.position.y = 7;
-    clock.start();
-  }
+  particlesMesh.rotateY(rotateSpeed);
+
+  // if (particlesMesh.position.y < -0.01) {
+  //   particlesMesh.position.y = 0.1;
+  //   clock.start();
+  // }
 
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
