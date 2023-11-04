@@ -4,15 +4,23 @@
     <link rel="icon" href="/src/images/rel_icon.png" type="image/png" />
     <!-- Adobe Fonts -->
     <link rel="stylesheet" href="https://use.typekit.net/rye3jaa.css" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- STYLES LOADER -->
+    <link rel="stylesheet" type="text/css" href="styles/style_desktop.css" />
+    <link rel="stylesheet" type="text/css" href="styles/style_mobile.css" />
     <script
       src="https://kit.fontawesome.com/029bb9f7f8.js"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Three.JS Script -->
+    <script type="module" src="/src/javascript/particleOverlay.js"></script>
+
+    <!-- Cursor Script -->
+    <script type="module" src="/src/javascript/cursor.js"></script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Hayden Stegman</title>
+    <title>Hey, It's Hayden Stegman</title>
   </head>
   <!--
           Spacer
@@ -21,42 +29,52 @@
     <!-- Three.JS Canvas -->
     <canvas id="bg"></canvas>
 
-    <!-- Navigation -->
-    <nav>
-      <a href="#">HS</a>
-      <a href="#">ABOUT ME</a>
-      <a href="#">PROJECTS</a>
-      <a href="#">CONTACT</a>
-    </nav>
-
     <!-- My Name Header-->
-    <h1 class="nameHeader">HAYDEN STEGMAN</h1>
+    <!-- <div class="headerBand">
+      <image class="headerCircle" src="/src/images/circleRotator.gif"/>
+      <h1 class="headerText">HS></h1>
+    </div> -->
+    <image class="hsBanner" src="/src/images/TitleFlag.gif"/>
 
     <!-- Center Controller-->
     <div class="introDiv">
-      <h3 class="controllerHeader">Checkout My</h3>
+      <h3 class="controllerHeader">Hayden Stegman's</h3>
       <div class="changingTextBox">
-        <div class="alternator" onclick="prevDescWord()">
-          <i class="fa-solid fa-chevron-left fa-3x leftAlternatorArrow"></i>
+        <div class="alternator prevAlt">
+          <i class="fa-solid fa-chevron-left fa-2xl leftAlternatorArrow"></i>
         </div>
+        <script type="module">
+          import { prevWord } from "/src/javascript/typewriter.js";
+          document.querySelector(".prevAlt").addEventListener("click", () => {
+            prevWord();
+          });
+        </script>
         <h1 class="cycle" id="typewriter"></h1>
         <div class="blinkerContainer">
           <div class="textBlinker" id="blinker"></div>
         </div>
-        <div class="alternator" onclick="nextDescWord()">
-          <i class="fa-solid fa-chevron-right fa-3x rightAlternatorArrow"></i>
+        <div class="alternator nextAlt">
+          <i class="fa-solid fa-chevron-right fa-2xl rightAlternatorArrow"></i>
         </div>
-        <script src="src/javascript/typewriter.js"></script>
+        <script type="module">
+          import { nextWord } from "/src/javascript/typewriter.js";
+          document.querySelector(".nextAlt").addEventListener("click", () => {
+            nextWord();
+          });
+        </script>
       </div>
-      <h3 class="controllerHeader">...</h3>
     </div>
 
-    <!-- Three.JS Script -->
-    <script type="module" src="/src/javascript/particleOverlay.js"></script>
+    <!-- Pixel Images -->
+    <image class="pixelPics" src="/src/images/Pixel-Camera.png" />
+    <image class="pixelPics2" src="/src/images/Pixel-Camera.png" />
+    <image class="pixelPics3" src="/src/images/Pixel-Camera.png" />
+    <div class="iconWheel">
+      <text class="iconWheelText">Lets Go</text>
+    </div>
 
     <!-- Cursor -->
     <div class="cursorDot"></div>
     <div class="cursorFollow"></div>
-    <script src="/src/javascript/cursor.js"></script>
   </body>
 </html>

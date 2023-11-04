@@ -1,5 +1,4 @@
 import * as THREE from "three";
-import { Clock, Material } from "three";
 
 const scene = new THREE.Scene();
 
@@ -18,14 +17,14 @@ renderer.setClearColor(0xe5383b, 0);
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 
-camera.position.setZ(55);
+camera.position.setZ(49);
 camera.position.setX(0);
 camera.position.setY(0);
 
 renderer.render(scene, camera);
 
 const particleGeometry = new THREE.BufferGeometry();
-const particlesCnt = 900000;
+const particlesCnt = 230000;
 
 const posArray = new Float32Array(particlesCnt * 3);
 for (let i = 0; i < particlesCnt * 3; i++) {
@@ -37,7 +36,7 @@ particleGeometry.setAttribute(
   new THREE.BufferAttribute(posArray, 3)
 );
 const material = new THREE.PointsMaterial({
-  size: 0.5,
+  size: 1.1,
   color: "#1e2327",
 });
 
@@ -55,21 +54,16 @@ document.addEventListener("mousemove", (e) => {
 const clock = new THREE.Clock();
 
 let snowFallSpeed = 0.001;
-let rotateSpeed = 0.0002;
+let rotateSpeed = 0.00004;
 let paralaxSpeed = 0.00001;
 
 function animate() {
   const elapsedTime = clock.getElapsedTime();
 
-  // particlesMesh.position.y = mouseY * paralaxSpeed;
-  // particlesMesh.position.x = mouseX;
+  particlesMesh.position.y = mouseY * paralaxSpeed;
+  particlesMesh.position.x = mouseX * paralaxSpeed;
 
   particlesMesh.rotateY(rotateSpeed);
-
-  // if (particlesMesh.position.y < -0.01) {
-  //   particlesMesh.position.y = 0.1;
-  //   clock.start();
-  // }
 
   requestAnimationFrame(animate);
   renderer.render(scene, camera);

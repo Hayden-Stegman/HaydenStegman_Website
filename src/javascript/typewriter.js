@@ -1,12 +1,10 @@
-var useDefs = false;
-
 const descriptionArr = ["Photography", "Design_Work", "Game_Project"];
 
 var currentWord = "";
 var desWordIndex = 0;
 var isTyping = false;
 var index = 0;
-var speed = 150;
+var speed = 170;
 
 function typeOut() {
   isTyping = true;
@@ -15,7 +13,6 @@ function typeOut() {
     document.getElementById("typewriter").innerHTML +=
       descriptionArr[desWordIndex].charAt(index);
     currentWord += descriptionArr[desWordIndex].charAt(index);
-    console.log("CurrentWord: " + currentWord);
     index++;
     setTimeout(typeOut, speed);
   } else {
@@ -29,7 +26,6 @@ function typeIn() {
     currentWord = document
       .getElementById("typewriter")
       .innerHTML.substring(0, index);
-    console.log("CurrentWord: " + currentWord);
     document.getElementById("typewriter").innerHTML = currentWord;
     index--;
     setTimeout(typeIn, speed);
@@ -38,7 +34,7 @@ function typeIn() {
   }
 }
 
-function nextDescWord() {
+export function nextWord() {
   if (!isTyping) {
     // Determine the Index of the Next Word
     if (desWordIndex == descriptionArr.length - 1) {
@@ -52,7 +48,7 @@ function nextDescWord() {
   }
 }
 
-function prevDescWord() {
+export function prevWord() {
   if (!isTyping) {
     // Determine the Index of the Next Word
     if (desWordIndex == 0) {
