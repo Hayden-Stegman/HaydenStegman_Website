@@ -2,24 +2,17 @@
     canvas {
         padding: 0px;
     }
-    .controllerHeader {
-        font-size: 1.2em;
-    }
-    .cycle {
-        /* background-color: #A4161A; */
-        font-weight:900;
-        font-size: 2.5em;
-    }
-    .cycle:hover {
-        color: var(--color_main_9);
-        font-size: 2em;
-    }
     body{
         cursor: default;
     }
-    .hsBanner{
-        position: absolute;
-        width: 12em;
-        left: 0em;
+    /* cursor dot Removal */
+    .cursorDot {
+        width: 0px;
+        height: 0px;
+    }
+
+    .cursorFollow {
+        width: 0px;
+        height: 0px;
     }
   }
