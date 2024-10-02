@@ -1,0 +1,90 @@
+:root {
+    --pal_white: #e6dbdb;
+    --pal_black: #131212;
+    --pal_orange: #f96023;
+}
+
+/* Main Background for All Pages */
+#page-background {
+    /* Disable Scrolling, make the background screen size*/
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    margin: 0rem;
+    overflow: hidden;
+    
+    background-color: var(--pal_black);
+    cursor: none;
+
+    /* Control the state of the HEADER & BODY */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Page Sections */
+#header {
+    flex: 2;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#body {
+    flex: 10;
+}
+#footer {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Nav Sections */
+#nav-header {
+    /* background-color: blue; */
+    position: relative;
+    left: 2%;
+}
+#nav-main {
+    position: relative;
+    left: 45%;
+    transform: translate(-50%, 0);
+}
+.nav-link {
+    opacity: 75%;
+    /* Container Controlls */
+    color: var(--pal_white);
+    padding: 0 15px;
+    text-decoration: none;
+    cursor: none;
+    transition: 0.5s;
+    user-select: none;
+}
+.nav-link:hover {
+    opacity: 100%;
+    font-size: 1.15em;
+}
+.current-page {
+    /* Container Controlls */
+    color: var(--pal_orange);
+    padding: 0 15px;
+    text-decoration: none;
+    cursor: none;
+    user-select: none;
+}
+
+#nav-link-main {
+    font-size: 1.5em;
+}
+#nav-link-main:hover {
+    color: var(--pal_orange);
+    font-size: 1.6em;
+}
+
+/* Standard Font Used in the UI */
+.text-standard {
+    font-family: basic-sans, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 1.1em;
+}

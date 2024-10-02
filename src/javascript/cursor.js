@@ -1,15 +1,10 @@
-const cursorDot = document.querySelector(".cursorDot");
-const cursorFollow = document.querySelector(".cursorFollow");
+const cursorDot = document.querySelector("#cursor-dot");
 
 if (window.innerWidth >= 960) {
   document.addEventListener("mousemove", (e) => {
     cursorDot.setAttribute(
       "style",
-      "top: " + (e.pageY - 3) + "px; left: " + (e.pageX - 3) + "px;"
-    );
-    cursorFollow.setAttribute(
-      "style",
-      "top: " + (e.pageY - 15) + "px; left: " + (e.pageX - 15) + "px;"
+      "top: " + (e.pageY - 5) + "px; left: " + (e.pageX - 5) + "px;"
     );
   });
 }

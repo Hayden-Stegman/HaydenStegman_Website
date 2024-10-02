@@ -4,57 +4,60 @@
     <link rel="icon" href="/src/images/rel_icon.png" type="image/png" />
     <!-- Adobe Fonts -->
     <link rel="stylesheet" href="https://use.typekit.net/qcb2rfk.css">
-    <!-- STYLES LOADER -->
-    <link rel="stylesheet" type="text/css" href="styles/style_desktop.css" />
-    <link rel="stylesheet" type="text/css" href="styles/style_mobile.css" />
     <!-- Cursor Script -->
     <script type="module" src="/src/javascript/cursor.js"></script>
+    <!-- Image Track Script -->
+    <script type="module" src="/src/javascript/imageTrack.js"></script>
     <!-- Font Awsome-->
     <script src="https://kit.fontawesome.com/029bb9f7f8.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/styles/cursor.css" />
+    <link rel="stylesheet" href="src/styles/homePage.css" />
+    <link rel="stylesheet" href="src/styles/universal.css" />
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hey, It's Hayden Stegman</title>
   </head>
-  <!--
-          Spacer
-  -->
-  <body>
-    <!-- Three.JS Canvas -->
-    <canvas id="bg"></canvas>
 
-    <!-- Display Boxes -->
-    <div class="displayBox">
-      <div class="pageTop">
-        <h1 class="pageIcon">HS...</h1>
-      </div>
-      <div class="pageMiddle">
-        <div class="centerPiece">
-          <p class="pageCenterText">
-            Hey, Im Hayden Stegman
-          </p>
-          <p class="pageCenterCatcher">
-            MULTI-DISCIPLINARY DESIGNER
-          </p>
-          <p class="pageCenterTagLine">
-            I live for Creative Solutions Combined with Simple Designs
-          </p>
-          <!-- Next Page Button -->
-          <div class="buttonHolder">
-            <div class="nextPageButton">
-              <div class="nextPageButtonFiller"></div>
-              <i class="fa-solid fa-arrow-down nextPageButtonArrow"></i>
-            </div>
-          </div>
+  <body id="page-background">
+    <div id="header">
+      <nav id="nav-header">
+        <a id="nav-link-main" class="nav-link text-standard" href="./index.html">
+          H.
+        </a>
+      </nav>
+      <nav id="nav-main">
+        <a class="current-page text-standard" href="./index.html">
+          About
+        </a>
+        <a class="nav-link text-standard" href="/src/pages/contact.html">
+          Contact
+        </a>
+        <a class="nav-link text-standard" href="/src/pages/work.html">
+          Work
+        </a>
+      </nav>
+    </div>
+      <div id="body">
+        <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+          <image class="image" src="https://images.unsplash.com/photo-1616868324781-f6f8d9b42576?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" draggable="false" data-card-id="1"/>
+          <image class="image" src="https://images.unsplash.com/photo-1568663041326-6348c761f7af?q=80&w=2985&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" draggable="false" data-card-id="2"/>
+          <image class="image" src="https://images.unsplash.com/photo-1516283182395-4b90237bff2e?q=80&w=2972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" draggable="false" data-card-id="3"/>
+          <image class="image" src="https://images.unsplash.com/photo-1534531304203-b830551771b9?q=80&w=2912&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" draggable="false" data-card-id="4"/>
+          <image class="image" src="https://images.unsplash.com/photo-1508244898853-0ceb7788a86a?q=80&w=2969&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" draggable="false" data-card-id="5"/>
+          <image class="image" src="src/images/Photography/TylerTheCar.jpg" draggable="false" data-card-id="6"/>
         </div>
       </div>
-    </div>
-
-    <!-- Cursor -->
-    <div class="cursorDot"></div>
-    <div class="cursorFollow"></div>
-
-        <!-- Three.JS Script -->
-        <script type="module" src="/src/javascript/particleBackground.js"></script>
+      <div id="footer">
+        <div id="counter" class="text-standard">1</div>
+      </div>
+      <!-- Cursor -->
+      <div id="cursor-dot"></div>
+      <div id="film-view-finder">
+        <div class="focus left-focus"></div>
+        <div class="focus circle-focus"></div>
+        <div class="focus right-focus"></div>
+      </div>
   </body>
 </html>

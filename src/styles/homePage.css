@@ -1,0 +1,55 @@
+/* IMAGE TRACK */
+#image-track > .image {
+    width: 48vmin;
+    height: 65vmin;
+    object-fit: cover;
+    object-position: 100% 50%;
+    user-select: none;
+    transition: filter 1s;
+    transition: transform 2s;
+    filter:blur(0px);
+}
+
+#image-track {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 2vmin;
+}
+
+#counter {
+    color: var(--pal_white);
+    position: relative;
+    left: 50%;
+    transform: translate(0%, -50%);
+    border: solid 1px var(--pal_white);
+    padding: 0px 10px;
+}
+
+#film-view-finder {
+    transition: 0.5s;
+}
+.focus {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: solid 1px var(--pal_white);
+    width: 5px;
+    height: 5px;
+}
+.circle-focus {
+    border-radius: 100%;
+    width: 10px;
+    height: 10px;
+}
+.left-focus {
+    position: absolute;
+    left: 47%;
+}
+.right-focus {
+    position: absolute;
+    left: 53%;
+}

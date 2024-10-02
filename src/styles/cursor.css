@@ -1,0 +1,14 @@
+/* Project Colors */
+:root {
+    --scale_9: #E2D9D9;
+}
+
+#cursor-dot {
+    width: 5px;
+    height: 5px;
+    background-color: var(--scale_9);
+    opacity: 75%;
+    border-radius: 75%; 
+    position: absolute;
+    pointer-events: none;
+}
